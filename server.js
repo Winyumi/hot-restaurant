@@ -1,22 +1,23 @@
 // Dependencies
 // =============================================================
+const express = require('express');
 // Sets up the Express App
 // =============================================================
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
-app.use(Express.urlencoded({ extended: true }));
-app.use(Express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //POST request for Reservation Table
 //================================================================
 var tables = [
   {
-    TableID: ID,
-    Name: name,
-    Email: email,
-    Phone: phoneNum
+    tableID: null,
+    name: null,
+    email: null,
+    phone: null
 
   }
 ]
@@ -27,16 +28,6 @@ app.post("/reservationView", function (req, res) {
   alert("Reservation confirm");
 })
 
-
-// var tables = [
-// {
-//     TableID : ID,
-//     Name : name ,
-//     Email: email,
-//     Phone : phoneNum
-
-// }
-// ]
 
 // Routes
 // =============================================================
