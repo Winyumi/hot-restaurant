@@ -14,11 +14,31 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
+//POST request for Reservation Table
+//================================================================
+var tables = [
+  {
+    tableID: null,
+    name: null,
+    email: null,
+    phone: null
+
+  }
+]
+
+app.post("/reservationView", function (req, res) {
+  var newtables = req.body;
+  tables.push(newtables);
+  alert("Reservation confirm");
+})
+
+
 // Routes
 // =============================================================
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
+
 
 app.get("/tables", function (req, res) {
   res.sendFile(__dirname + "/public/tables.html");
@@ -26,6 +46,9 @@ app.get("/tables", function (req, res) {
 
 app.get("/reservation", function (req, res) {
   res.sendFile(__dirname + "/public/reservation_add.html");
+=======
+app.get("/reservation", function (req, res) {
+  res.sendFile(__dirname + "/public/tables.html");
 });
 // Starts the server to begin listening
 // =============================================================
