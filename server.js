@@ -46,9 +46,6 @@ app.get("/tables", function (req, res) {
 
 app.get("/reservation", function (req, res) {
   res.sendFile(__dirname + "/public/reservation_add.html");
-=======
-app.get("/reservation", function (req, res) {
-  res.sendFile(__dirname + "/public/tables.html");
 });
 // Starts the server to begin listening
 // =============================================================
